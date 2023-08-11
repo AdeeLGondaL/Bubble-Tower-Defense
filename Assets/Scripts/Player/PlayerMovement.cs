@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement Variables")]
     [SerializeField] private Joystick joystick;
     private Tween tweenID;
-    private int rotateAngle = 0;
+    private int rotateAngleY = 0, rotateAngleX = 90;
     
     // Start is called before the first frame update
     void Start()
@@ -19,13 +19,21 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (joystick.Direction.x < 0 && rotateAngle < 30f)
+        if (joystick.Direction.x < 0 && rotateAngleY < 30f)
         {
-            tweenID = transform.DORotate( new Vector3(90f, 0f, rotateAngle++), 0f);
+            tweenID = transform.DORotate( new Vector3(rotateAngleX, 0f, rotateAngleY++), 0f);
         } 
-        else if (joystick.Direction.x > 0 && rotateAngle > -30f)
+        else if (joystick.Direction.x > 0 && rotateAngleY > -30f)
         {
-            tweenID = transform.DORotate( new Vector3(90f, 0f, rotateAngle--), 0f);
+            tweenID = transform.DORotate( new Vector3(rotateAngleX, 0f, rotateAngleY--), 0f);
+        }
+        if (joystick.Direction.y < 0 && rotateAngleX < 110f)
+        {
+            tweenID = transform.DORotate( new Vector3(rotateAngleX++, 0f, rotateAngleY), 0f);
+        } 
+        else if (joystick.Direction.y > 0 && rotateAngleX > 85f)
+        {
+            tweenID = transform.DORotate( new Vector3(rotateAngleX--, 0f, rotateAngleY), 0f);
         }
     }
 }
