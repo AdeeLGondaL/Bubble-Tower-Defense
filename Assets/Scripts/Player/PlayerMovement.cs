@@ -8,9 +8,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement Variables")]
     [SerializeField] private Joystick joystick;
     private Tween tweenID;
-    public int currentRotateAngleY, currentRotateAngleX;
+    public float currentRotateAngleHorizontal, currentRotateAngleVertical;
 
-    public int maxRotateAngleY, minRotateAngleY, maxRotateAngleX, minRotateAngleX;
+    public float maxRotateAngleHorizontal, minRotateAngleHorizontal, maxRotateAngleVertical, minRotateAngleVertical;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,21 +20,25 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (joystick.Direction.x < 0 && currentRotateAngleY < 30f)
+        if (joystick.Direction.x < 0 && currentRotateAngleHorizontal > minRotateAngleHorizontal)
         {
-            tweenID = transform.DORotate( new Vector3(currentRotateAngleX, 0f, currentRotateAngleY++), 0f);
+            currentRotateAngleHorizontal += joystick.Direction.x;
+            tweenID = transform.DORotate( new Vector3(0, currentRotateAngleHorizontal, currentRotateAngleVertical), 0f);
         } 
-        else if (joystick.Direction.x > 0 && currentRotateAngleY > -30f)
+        else if (joystick.Direction.x > 0 && currentRotateAngleHorizontal < maxRotateAngleHorizontal)
         {
-            tweenID = transform.DORotate( new Vector3(currentRotateAngleX, 0f, currentRotateAngleY--), 0f);
+            currentRotateAngleHorizontal += joystick.Direction.x;
+            tweenID = transform.DORotate( new Vector3(0, currentRotateAngleHorizontal, currentRotateAngleVertical), 0f);
         }
-        if (joystick.Direction.y < 0 && currentRotateAngleX < 110f)
+        if (joystick.Direction.y < 0 && currentRotateAngleVertical < maxRotateAngleVertical)
         {
-            tweenID = transform.DORotate( new Vector3(currentRotateAngleX++, 0f, currentRotateAngleY), 0f);
+            currentRotateAngleVertical += -joystick.Direction.y;
+            tweenID = transform.DORotate( new Vector3(0, currentRotateAngleHorizontal, currentRotateAngleVertical), 0f);
         } 
-        else if (joystick.Direction.y > 0 && currentRotateAngleX > 85f)
+        else if (joystick.Direction.y > 0 && currentRotateAngleVertical > minRotateAngleVertical)
         {
-            tweenID = transform.DORotate( new Vector3(currentRotateAngleX--, 0f, currentRotateAngleY), 0f);
+            currentRotateAngleVertical -= joystick.Direction.y;
+            tweenID = transform.DORotate( new Vector3(0, currentRotateAngleHorizontal, currentRotateAngleVertical), 0f);
         }
     }
 }
