@@ -5,14 +5,18 @@ using Lean.Touch;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Pool;
+using Random = System.Random;
 
 public class Shooter : MonoBehaviour
 {
+    [SerializeField] CannonBall cannonBallPrefab;
     [SerializeField] private Animator playerAnimator;
-    public CannonBall cannonBallPrefab;
+    [SerializeField] public ParticleSystem smokeParticle;
+    [SerializeField] private List<Color> ballColors;
+    public float force;
     private ObjectPool<CannonBall> pool;
     private bool canShoot = false;
-    public float force;
+    private Color ballColor;
 
     private static readonly int gettingReadyTrigger = Animator.StringToHash("getting ready");
     private static readonly int shootTrigger = Animator.StringToHash("shoot");
@@ -24,6 +28,7 @@ public class Shooter : MonoBehaviour
             {
                 ball.gameObject.SetActive(true);
                 ball.GetComponent<Rigidbody>().AddForce(-ball.transform.right * force);
+                ball.GetComponent<CannonBall>().ballColor = ballColor;
                 ball.Init(DestroyBall);
             },
             ball => { ball.gameObject.SetActive(false);
@@ -32,13 +37,7 @@ public class Shooter : MonoBehaviour
             ball => { Destroy(ball.gameObject); },
             false,
             15, 30);
-
-        for (int i = 0; i < 15; i++)
-        {
-            // var balli = pool.Get();
-            // pool.Release(balli);
-        }
-}
+    }
 
     // Update is called once per frame
     void Update()
@@ -52,6 +51,9 @@ public class Shooter : MonoBehaviour
         {
             Debug.Log("Ready");
             playerAnimator.SetTrigger(gettingReadyTrigger);
+            Random rnd = new Random();
+            ballColor = ballColors[rnd.Next(ballColors.Count)];
+            smokeParticle.startColor = ballColor;
             canShoot = true;
         }
     }

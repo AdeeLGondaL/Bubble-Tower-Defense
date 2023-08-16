@@ -6,6 +6,7 @@ using UnityEngine;
 public class CannonBall : MonoBehaviour
 {
     private Action<CannonBall> killAction;
+    public Color ballColor;
 
     public void Init(Action<CannonBall> killAction)
     {
