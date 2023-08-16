@@ -146,3 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be105e5ce151de84bb1f217dddd94ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ballColor: {r: 0.61016506, g: 0.9716981, b: 0, a: 1}

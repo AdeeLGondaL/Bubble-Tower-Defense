@@ -976,6 +976,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417966006}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!198 &1479858820 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2629104974376491364, guid: d34f8b523f81af84292e11d55a97e523, type: 3}
+  m_PrefabInstance: {fileID: 7754020073679280900}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1859889795
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,6 +1232,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2442388539789185463, guid: 0b6aa3c188ab9574198f360072378a27, type: 3}
+      propertyPath: ignoreStartedOverGui
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442388539789185463, guid: 0b6aa3c188ab9574198f360072378a27, type: 3}
       propertyPath: onFinger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 471648529}
@@ -1273,6 +1282,14 @@ PrefabInstance:
     - target: {fileID: 8226599535904955161, guid: 0b6aa3c188ab9574198f360072378a27, type: 3}
       propertyPath: m_Name
       value: Lean Finger
+      objectReference: {fileID: 0}
+    - target: {fileID: 8764197711752269719, guid: 0b6aa3c188ab9574198f360072378a27, type: 3}
+      propertyPath: ignoreIsOverGui
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8764197711752269719, guid: 0b6aa3c188ab9574198f360072378a27, type: 3}
+      propertyPath: ignoreStartedOverGui
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8764197711752269719, guid: 0b6aa3c188ab9574198f360072378a27, type: 3}
       propertyPath: onFinger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1432,6 +1449,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3751479392118932080, guid: d34f8b523f81af84292e11d55a97e523, type: 3}
+      propertyPath: smokeParticle
+      value: 
+      objectReference: {fileID: 1479858820}
     - target: {fileID: 7689625082171727245, guid: d34f8b523f81af84292e11d55a97e523, type: 3}
       propertyPath: joystick
       value: 
