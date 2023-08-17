@@ -27,7 +27,7 @@ public class Shooter : MonoBehaviour
             ball =>
             {
                 ball.gameObject.SetActive(true);
-                ball.GetComponent<Rigidbody>().AddForce(-ball.transform.right * force);
+                ball.GetComponent<Rigidbody>().AddForce(-this.transform.right * force, ForceMode.Impulse);
                 ball.GetComponent<CannonBall>().ballColor = ballColor;
                 ball.Init(DestroyBall);
             },
