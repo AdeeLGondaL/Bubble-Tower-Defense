@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CannonBall : MonoBehaviour
@@ -11,6 +12,7 @@ public class CannonBall : MonoBehaviour
     public GameObject yellowEnemy;
     public GameObject blueEnemy;
     public GameObject redEnemy;
+    private bool hasCollided = false;
 
     public void Init(Action<CannonBall> killAction)
     {
@@ -19,22 +21,26 @@ public class CannonBall : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if(other.gameObject.layer == LayerMask.NameToLayer("Enemy") && !hasCollided)
         {
-            other.gameObject.TryGetComponent<Color>(out Color enemyColor);
+            hasCollided = true;
+            other.gameObject.TryGetComponent<Enemy>(out Enemy enemy);
+            
 
-            if (enemyColor.Equals(ballColor))
+            if (enemy.enemyColor.Equals(ballColor))
             {
                 //Destroy Enemy Group
 
                 Destroy(other.gameObject.transform.parent.gameObject);
             }
-            else if (!enemyColor.Equals(ballColor))
+            else if (!enemy.enemyColor.Equals(ballColor))
             {
                 //Instaniate Group of Ball Color
 
-                Instantiate(EnemyGroupToSpawn(), other.gameObject.transform.position, other.gameObject.transform.rotation);
-
+                var newEnemy = Instantiate(EnemyGroupToSpawn(), other.gameObject.transform.position, other.gameObject.transform.rotation);
+                newEnemy.TryGetComponent<EnemyGroup>(out EnemyGroup enemyGroup);
+                enemyGroup.Cannon = other.gameObject.GetComponent<EnemyNavigation>().Cannon;
+                
             }
 
         }
@@ -45,19 +51,22 @@ public class CannonBall : MonoBehaviour
 
     private GameObject EnemyGroupToSpawn()
     {
-        if (ballColor.Equals(greenEnemy.GetComponentInChildren<Color>()))
+        Debug.Log(ballColor.ToHexString());
+        Debug.Log(greenEnemy.GetComponentInChildren<Enemy>().enemyColor.ToHexString());
+
+        if (ballColor.Equals(greenEnemy.GetComponentInChildren<Enemy>().enemyColor))
         {
             return greenEnemy;
         }
-        else if (ballColor.Equals(redEnemy.GetComponentInChildren<Color>()))
+        else if (ballColor.Equals(redEnemy.GetComponentInChildren<Enemy>().enemyColor))
         {
             return redEnemy;
         }
-        else if (ballColor.Equals(blueEnemy.GetComponentInChildren<Color>())) 
+        else if (ballColor.Equals(blueEnemy.GetComponentInChildren<Enemy>().enemyColor)) 
         {
             return blueEnemy;
         }
-        else if (ballColor.Equals(yellowEnemy.GetComponentInChildren<Color>()))
+        else if (ballColor.Equals(yellowEnemy.GetComponentInChildren<Enemy>().enemyColor))
         {
             return yellowEnemy;
         }
