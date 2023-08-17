@@ -976,11 +976,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417966006}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!198 &1479858820 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2629104974376491364, guid: d34f8b523f81af84292e11d55a97e523, type: 3}
-  m_PrefabInstance: {fileID: 7754020073679280900}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1859889795
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,10 +1444,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3751479392118932080, guid: d34f8b523f81af84292e11d55a97e523, type: 3}
-      propertyPath: smokeParticle
-      value: 
-      objectReference: {fileID: 1479858820}
     - target: {fileID: 7689625082171727245, guid: d34f8b523f81af84292e11d55a97e523, type: 3}
       propertyPath: joystick
       value: 
