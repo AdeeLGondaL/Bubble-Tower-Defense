@@ -147,3 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballColor: {r: 0.61016506, g: 0.9716981, b: 0, a: 1}
+  greenEnemy: {fileID: 7801055107989775518, guid: 2bbef0c104cd3a743ad4940dd15bdf61, type: 3}
+  yellowEnemy: {fileID: 9097940014258969935, guid: 110918207effed848815d4c79feb1b45, type: 3}
+  blueEnemy: {fileID: 708454117150942250, guid: 17307e5a9e12428408d85f3c8f71a190, type: 3}
+  redEnemy: {fileID: 3226978312736100602, guid: c62349ec9a840d2449b4185bb69a1475, type: 3}
