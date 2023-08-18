@@ -6,17 +6,24 @@ using UnityEngine.AI;
 public class EnemyNavigation : MonoBehaviour
 {
     private NavMeshAgent m_Agent;
-    [SerializeField] private Transform Cannon;
+    public Transform Cannon;
+    public EnemyGroup enemyGroup;
 
     // Start is called before the first frame update
     void Start()
     {
+        enemyGroup = GetComponentInParent<EnemyGroup>();
+        Cannon = enemyGroup.Cannon;
        m_Agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Cannon == null)
+        {
+            Cannon = enemyGroup.Cannon;
+        }
         m_Agent.destination = Cannon.position;
     }
 }

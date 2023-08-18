@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8841209645761950402}
+  - component: {fileID: 7099611483935837019}
   m_Layer: 3
   m_Name: GreenEnemy
   m_TagString: Untagged
@@ -40,6 +41,19 @@ Transform:
   - {fileID: 8252279970187857169}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7099611483935837019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7801055107989775518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e8bec8573c6f66439461d4fec03968e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cannon: {fileID: 0}
 --- !u!1001 &502720336792848347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -469,6 +483,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1236419016425322300}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8300981418915949927}
   m_SourcePrefab: {fileID: 100100000, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
 --- !u!4 &103789529300361264 stripped
 Transform:
@@ -515,6 +532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cannon: {fileID: 0}
+  enemyGroup: {fileID: 0}
 --- !u!114 &1236419016425322300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,7 +545,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58eaa3880eb33e4488b4154d5493159a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyColor: {r: 0.07058824, g: 0.8666667, b: 0.09411765, a: 0}
+  enemyColor: {r: 0.07058824, g: 0.8666667, b: 0.09411765, a: 1}
+--- !u!65 &8300981418915949927
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737302443350178442}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!1001 &2385391295022846207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -957,6 +996,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4728244276518208339}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5246620187287791584}
   m_SourcePrefab: {fileID: 100100000, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
 --- !u!4 &2778762493438736148 stripped
 Transform:
@@ -1003,6 +1045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cannon: {fileID: 0}
+  enemyGroup: {fileID: 0}
 --- !u!114 &4728244276518208339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1015,7 +1058,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58eaa3880eb33e4488b4154d5493159a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyColor: {r: 0.07058824, g: 0.8666667, b: 0.09411765, a: 0}
+  enemyColor: {r: 0.07058824, g: 0.8666667, b: 0.09411765, a: 1}
+--- !u!65 &5246620187287791584
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3304504610611817902}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!1001 &3440116118763150255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1445,6 +1509,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
       insertIndex: -1
       addedObject: {fileID: 10937593629923032}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5096195523965261137}
   m_SourcePrefab: {fileID: 100100000, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
 --- !u!1 &2557154756098533118 stripped
 GameObject:
@@ -1486,6 +1553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cannon: {fileID: 0}
+  enemyGroup: {fileID: 0}
 --- !u!114 &10937593629923032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1498,7 +1566,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58eaa3880eb33e4488b4154d5493159a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyColor: {r: 0.07058824, g: 0.8666667, b: 0.09411765, a: 0}
+  enemyColor: {r: 0.07058824, g: 0.8666667, b: 0.09411765, a: 1}
+--- !u!65 &5096195523965261137
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2557154756098533118}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!4 &2897791616830176324 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
@@ -1929,6 +2018,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8344861114500047699}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4508994471433113724}
   m_SourcePrefab: {fileID: 100100000, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
 --- !u!4 &5812611256824936703 stripped
 Transform:
@@ -1953,6 +2045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cannon: {fileID: 0}
+  enemyGroup: {fileID: 0}
 --- !u!195 &9103249713172998028
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1987,7 +2080,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58eaa3880eb33e4488b4154d5493159a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyColor: {r: 0.07058824, g: 0.8666667, b: 0.09411765, a: 0}
+  enemyColor: {r: 0.07058824, g: 0.8666667, b: 0.09411765, a: 1}
+--- !u!65 &4508994471433113724
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620673569683464773}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!1001 &6827902990183859862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2417,6 +2531,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7797941035966169897}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1283213779977567511}
   m_SourcePrefab: {fileID: 100100000, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
 --- !u!1 &5909000105443310535 stripped
 GameObject:
@@ -2458,6 +2575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cannon: {fileID: 0}
+  enemyGroup: {fileID: 0}
 --- !u!114 &7797941035966169897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2470,7 +2588,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58eaa3880eb33e4488b4154d5493159a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyColor: {r: 0.07058824, g: 0.8666667, b: 0.09411765, a: 0}
+  enemyColor: {r: 0.07058824, g: 0.8666667, b: 0.09411765, a: 1}
+--- !u!65 &1283213779977567511
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5909000105443310535}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!4 &6434285856768516477 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
@@ -2905,6 +3044,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3121596987083561216}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7161417470487579924}
   m_SourcePrefab: {fileID: 100100000, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
 --- !u!4 &7441179572964192730 stripped
 Transform:
@@ -2951,6 +3093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cannon: {fileID: 0}
+  enemyGroup: {fileID: 0}
 --- !u!114 &3121596987083561216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2963,7 +3106,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58eaa3880eb33e4488b4154d5493159a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyColor: {r: 0.07058824, g: 0.8666667, b: 0.09411765, a: 0}
+  enemyColor: {r: 0.07058824, g: 0.8666667, b: 0.09411765, a: 1}
+--- !u!65 &7161417470487579924
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7786637758111165280}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!1001 &8435037130868337402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3393,6 +3557,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4776319440916053302}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7007270670371090467}
   m_SourcePrefab: {fileID: 100100000, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
 --- !u!4 &8252279970187857169 stripped
 Transform:
@@ -3439,6 +3606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cannon: {fileID: 0}
+  enemyGroup: {fileID: 0}
 --- !u!114 &4776319440916053302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3451,7 +3619,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58eaa3880eb33e4488b4154d5493159a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyColor: {r: 0.07058824, g: 0.8666667, b: 0.09411765, a: 0}
+  enemyColor: {r: 0.07058824, g: 0.8666667, b: 0.09411765, a: 1}
+--- !u!65 &7007270670371090467
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8777001400949151659}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!1001 &8576938185310002011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3881,6 +4070,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3933051024143695057}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8595613697688467981}
   m_SourcePrefab: {fileID: 100100000, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
 --- !u!4 &8110383331014589616 stripped
 Transform:
@@ -3927,6 +4119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cannon: {fileID: 0}
+  enemyGroup: {fileID: 0}
 --- !u!114 &3933051024143695057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3939,7 +4132,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58eaa3880eb33e4488b4154d5493159a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyColor: {r: 0.07058824, g: 0.8666667, b: 0.09411765, a: 0}
+  enemyColor: {r: 0.07058824, g: 0.8666667, b: 0.09411765, a: 1}
+--- !u!65 &8595613697688467981
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8918831538098923018}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!1001 &8893719981004653543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4369,6 +4583,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4788923401542549824}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6417697148196582371}
   m_SourcePrefab: {fileID: 100100000, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}
 --- !u!1 &8623758740490731190 stripped
 GameObject:
@@ -4410,6 +4627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cannon: {fileID: 0}
+  enemyGroup: {fileID: 0}
 --- !u!114 &4788923401542549824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4422,7 +4640,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58eaa3880eb33e4488b4154d5493159a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyColor: {r: 0.07058824, g: 0.8666667, b: 0.09411765, a: 0}
+  enemyColor: {r: 0.07058824, g: 0.8666667, b: 0.09411765, a: 1}
+--- !u!65 &6417697148196582371
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8623758740490731190}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!4 &9000002190276748300 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d394f81a9cd76b54ebdee4fcb3b45153, type: 3}

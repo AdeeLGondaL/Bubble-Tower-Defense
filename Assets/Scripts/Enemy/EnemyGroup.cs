@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyGroup : MonoBehaviour
 {
-    public Color enemyColor;
+    public Transform Cannon;
 }
