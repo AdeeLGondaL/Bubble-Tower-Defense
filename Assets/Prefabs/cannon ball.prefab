@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 407474516404591820}
   - component: {fileID: 2588179471110473533}
   - component: {fileID: 6206648958897962191}
+  - component: {fileID: 366358910593891772}
   m_Layer: 0
   m_Name: cannon ball
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -123,3 +124,30 @@ MonoBehaviour:
   yellowEnemy: {fileID: 9097940014258969935, guid: 110918207effed848815d4c79feb1b45, type: 3}
   blueEnemy: {fileID: 708454117150942250, guid: 17307e5a9e12428408d85f3c8f71a190, type: 3}
   redEnemy: {fileID: 3226978312736100602, guid: c62349ec9a840d2449b4185bb69a1475, type: 3}
+--- !u!54 &366358910593891772
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329424170365008785}
+  serializedVersion: 4
+  m_Mass: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

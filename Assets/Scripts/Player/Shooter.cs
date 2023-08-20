@@ -26,23 +26,26 @@ public class Shooter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pool = new ObjectPool<CannonBall>((() => { return Instantiate(cannonBallPrefab, transform.position, Quaternion.identity); }),
+        pool = new ObjectPool<CannonBall>((() => { return Instantiate(cannonBallPrefab, transform.position, crossHair.transform.rotation); }),
             ball =>
             {
+                ball.gameObject.transform.position = crossHair.transform.position;
+                ball.gameObject.transform.rotation = crossHair.transform.rotation;
                 ball.gameObject.SetActive(true);
-                //ball.GetComponent<Rigidbody>().AddForce(-this.transform.right * force, ForceMode.Impulse);
+                // ball.GetComponent<Rigidbody>().AddForce(crossHair.transform.forward * force, ForceMode.Impulse);
                 if (Physics.Raycast(crossHair.transform.position, crossHair.transform.forward, out hit, ballRange))
                 {
-                    Debug.Log(hit.transform.position);
-                    Debug.DrawRay(crossHair.transform.position, crossHair.transform.forward * 50f, Color.green);
-                    ball.transform.DOMove(hit.transform.position, 0.5f);
+                    Debug.Log($"{hit.transform.name},{hit.point}");
+                    Debug.DrawRay(crossHair.transform.position, crossHair.transform.forward * ballRange, Color.green, 3f);
+                    ball.transform.DOMove(hit.point, 1f);
                 }
                 ball.GetComponent<CannonBall>().ballColor = ballColor;
                 ball.Init(DestroyBall);
             },
             ball => { ball.gameObject.SetActive(false);
-                ball.gameObject.transform.position = this.transform.position;
-                //ball.GetComponent<Rigidbody>().AddForce(this.transform.right * force, ForceMode.Impulse);
+                ball.gameObject.transform.position = crossHair.transform.position;
+                ball.gameObject.transform.rotation = crossHair.transform.rotation;
+                //ball.GetComponent<Rigidbody>().AddForce(-crossHair.transform.forward * force, ForceMode.Impulse);
             },
             ball => { Destroy(ball.gameObject); },
             false,
