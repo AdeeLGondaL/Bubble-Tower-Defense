@@ -22,22 +22,22 @@ public class PlayerMovement : MonoBehaviour
     {
         if (joystick.Direction.x < 0 && currentRotateAngleHorizontal > minRotateAngleHorizontal)
         {
-            currentRotateAngleHorizontal += joystick.Direction.x;
+            currentRotateAngleHorizontal += -0.05f;
             tweenID = transform.DORotate( new Vector3(0, currentRotateAngleHorizontal, currentRotateAngleVertical), 0f);
         } 
         else if (joystick.Direction.x > 0 && currentRotateAngleHorizontal < maxRotateAngleHorizontal)
         {
-            currentRotateAngleHorizontal += joystick.Direction.x;
+            currentRotateAngleHorizontal += 0.05f;
             tweenID = transform.DORotate( new Vector3(0, currentRotateAngleHorizontal, currentRotateAngleVertical), 0f);
         }
         if (joystick.Direction.y < 0 && currentRotateAngleVertical < maxRotateAngleVertical)
         {
-            currentRotateAngleVertical += -joystick.Direction.y;
+            currentRotateAngleVertical += 0.05f;
             tweenID = transform.DORotate( new Vector3(0, currentRotateAngleHorizontal, currentRotateAngleVertical), 0f);
         } 
         else if (joystick.Direction.y > 0 && currentRotateAngleVertical > minRotateAngleVertical)
         {
-            currentRotateAngleVertical -= joystick.Direction.y;
+            currentRotateAngleVertical -= 0.05f;
             tweenID = transform.DORotate( new Vector3(0, currentRotateAngleHorizontal, currentRotateAngleVertical), 0f);
         }
     }
