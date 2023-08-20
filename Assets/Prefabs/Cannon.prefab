@@ -53,7 +53,9 @@ MonoBehaviour:
   - {r: 0.07058824, g: 0.8666667, b: 0.09411765, a: 1}
   - {r: 0.23137255, g: 0.59607846, b: 1, a: 1}
   - {r: 1, g: 0.75686276, b: 0, a: 1}
-  force: 25
+  crossHair: {fileID: 1619111794641791228}
+  force: 200
+  ballRange: 100
 --- !u!1 &586774415408842654
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,13 +127,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619111794641791228}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0824078, y: -0.70228845, z: 0.08240783, w: 0.7022884}
+  m_LocalRotation: {x: 0.0861746, y: -0.70183617, z: 0.0861746, w: 0.70183617}
   m_LocalPosition: {x: 1.39, y: 5.68, z: 0.02}
   m_LocalScale: {x: 1, y: 0.9771036, z: 0.76575756}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7559050786862643003}
-  m_LocalEulerAnglesHint: {x: 13.385, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 14, y: -90, z: 0}
 --- !u!20 &8202375900938938359
 Camera:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using JetBrains.Annotations;
 using Lean.Touch;
 using TMPro;
@@ -13,26 +14,38 @@ public class Shooter : MonoBehaviour
     [SerializeField] private Animator playerAnimator;
     [SerializeField] public ParticleSystem smokeParticle;
     [SerializeField] private List<Color> ballColors;
-    public float force;
+    [SerializeField] private GameObject crossHair;
+    public float force, ballRange;
     private ObjectPool<CannonBall> pool;
     private bool canShoot = false;
     private Color ballColor;
+    RaycastHit hit;
 
     private static readonly int gettingReadyTrigger = Animator.StringToHash("getting ready");
     private static readonly int shootTrigger = Animator.StringToHash("shoot");
     // Start is called before the first frame update
     void Start()
     {
-        pool = new ObjectPool<CannonBall>((() => { return Instantiate(cannonBallPrefab, this.transform); }),
+        pool = new ObjectPool<CannonBall>((() => { return Instantiate(cannonBallPrefab, transform.position, crossHair.transform.rotation); }),
             ball =>
             {
+                ball.gameObject.transform.position = crossHair.transform.position;
+                ball.gameObject.transform.rotation = crossHair.transform.rotation;
                 ball.gameObject.SetActive(true);
-                ball.GetComponent<Rigidbody>().AddForce(-this.transform.right * force, ForceMode.Impulse);
+                // ball.GetComponent<Rigidbody>().AddForce(crossHair.transform.forward * force, ForceMode.Impulse);
+                if (Physics.Raycast(crossHair.transform.position, crossHair.transform.forward, out hit, ballRange))
+                {
+                    Debug.Log($"{hit.transform.name},{hit.point}");
+                    Debug.DrawRay(crossHair.transform.position, crossHair.transform.forward * ballRange, Color.green, 3f);
+                    ball.transform.DOMove(hit.point, 1f);
+                }
                 ball.GetComponent<CannonBall>().ballColor = ballColor;
                 ball.Init(DestroyBall);
             },
             ball => { ball.gameObject.SetActive(false);
-                ball.gameObject.transform.position = this.transform.position;
+                ball.gameObject.transform.position = crossHair.transform.position;
+                ball.gameObject.transform.rotation = crossHair.transform.rotation;
+                //ball.GetComponent<Rigidbody>().AddForce(-crossHair.transform.forward * force, ForceMode.Impulse);
             },
             ball => { Destroy(ball.gameObject); },
             false,
@@ -49,7 +62,6 @@ public class Shooter : MonoBehaviour
     {
         if (leanFinger.Old)
         {
-            Debug.Log("Ready");
             playerAnimator.SetTrigger(gettingReadyTrigger);
             Random rnd = new Random();
             ballColor = ballColors[rnd.Next(ballColors.Count)];
@@ -65,7 +77,6 @@ public class Shooter : MonoBehaviour
             var cannonBall = pool.Get();
             canShoot = false;
             playerAnimator.SetTrigger(shootTrigger);
-            Debug.Log("Shoot");
         }
     }
 
