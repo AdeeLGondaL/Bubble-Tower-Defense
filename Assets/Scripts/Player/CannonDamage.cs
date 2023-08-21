@@ -10,7 +10,7 @@ public class CannonDamage : MonoBehaviour
         {
             // Game Over (Lose)
 
-            Debug.Log("You Lose");
+            //Debug.Log("You Lose");
         }
     }
 }

@@ -35,7 +35,7 @@ public class Shooter : MonoBehaviour
                 // ball.GetComponent<Rigidbody>().AddForce(crossHair.transform.forward * force, ForceMode.Impulse);
                 if (Physics.Raycast(crossHair.transform.position, crossHair.transform.forward, out hit, ballRange))
                 {
-                    Debug.Log($"{hit.transform.name},{hit.point}");
+                    //Debug.Log($"{hit.transform.name},{hit.point}");
                     Debug.DrawRay(crossHair.transform.position, crossHair.transform.forward * ballRange, Color.green, 3f);
                     ball.transform.DOMove(hit.point, 1f);
                 }

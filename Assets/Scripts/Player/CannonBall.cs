@@ -23,6 +23,7 @@ public class CannonBall : MonoBehaviour
     {
         if(other.gameObject.layer == LayerMask.NameToLayer("Enemy") && !hasCollided)
         {
+            Debug.Log("Collision");
             hasCollided = true;
             other.gameObject.TryGetComponent<Enemy>(out Enemy enemy);
             
@@ -37,6 +38,7 @@ public class CannonBall : MonoBehaviour
             {
                 //Instaniate Group of Ball Color
 
+                Debug.Log("Enters FUNCTIPM");
                 var newEnemy = Instantiate(EnemyGroupToSpawn(), other.gameObject.transform.position, other.gameObject.transform.rotation);
                 newEnemy.TryGetComponent<EnemyGroup>(out EnemyGroup enemyGroup);
                 enemyGroup.Cannon = other.gameObject.GetComponent<EnemyNavigation>().Cannon;
@@ -45,14 +47,18 @@ public class CannonBall : MonoBehaviour
 
         }
 
-        if(other.gameObject.layer == LayerMask.NameToLayer("Enemy") || other.gameObject.layer == LayerMask.NameToLayer("Plane")) killAction(this);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy") || other.gameObject.layer == LayerMask.NameToLayer("Plane"))
+        {
+            hasCollided = false;
+            killAction(this);
+        }
     }
 
 
     private GameObject EnemyGroupToSpawn()
     {
-        Debug.Log(ballColor.ToHexString());
-        Debug.Log(greenEnemy.GetComponentInChildren<Enemy>().enemyColor.ToHexString());
+        //Debug.Log(ballColor.ToHexString());
+        //Debug.Log(greenEnemy.GetComponentInChildren<Enemy>().enemyColor.ToHexString());
 
         if (ballColor.Equals(greenEnemy.GetComponentInChildren<Enemy>().enemyColor))
         {
