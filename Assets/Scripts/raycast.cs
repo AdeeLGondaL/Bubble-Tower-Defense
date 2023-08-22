@@ -16,7 +16,7 @@ public class raycast : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, transform.forward, out hit, 100))
         {
-            Debug.Log($"{hit.transform.name},{hit.transform.position}");
+            //Debug.Log($"{hit.transform.name},{hit.transform.position}");
             Debug.DrawRay(transform.position, transform.forward * 100f, Color.green);
         }
     }
