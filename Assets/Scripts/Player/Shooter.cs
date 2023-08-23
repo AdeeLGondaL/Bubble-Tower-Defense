@@ -66,6 +66,7 @@ public class Shooter : MonoBehaviour
             Random rnd = new Random();
             ballColor = ballColors[rnd.Next(ballColors.Count)];
             smokeParticle.startColor = ballColor;
+            GameUIManager.Instance.SetColor(ballColor);
             canShoot = true;
         }
     }

@@ -9,7 +9,7 @@ public class EndPoint : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             // Game Over (Lose)
-
+            GameManager.Instance.GameLost();
             Debug.Log("You Lose");
         }
     }

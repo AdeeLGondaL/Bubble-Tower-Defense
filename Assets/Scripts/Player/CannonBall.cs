@@ -33,6 +33,7 @@ public class CannonBall : MonoBehaviour
                 //Destroy Enemy Group
 
                 Destroy(other.gameObject.transform.parent.gameObject);
+                GameManager.Instance.IncrementScore(150);
             }
             else if (!enemy.enemyColor.Equals(ballColor))
             {
