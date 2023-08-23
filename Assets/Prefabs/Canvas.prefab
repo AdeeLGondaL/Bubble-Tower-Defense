@@ -1645,6 +1645,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 5025716783703566625}
+  logoBG: {fileID: 5404142632406736760}
+  logo: {fileID: 1126836313456351033}
+  loadingText: {fileID: 2443041689628304847}
 --- !u!1 &3395337941206153714
 GameObject:
   m_ObjectHideFlags: 0

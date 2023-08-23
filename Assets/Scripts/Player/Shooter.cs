@@ -40,9 +40,11 @@ public class Shooter : MonoBehaviour
                     ball.transform.DOMove(hit.point, 1f);
                 }
                 ball.GetComponent<CannonBall>().ballColor = ballColor;
+                ball.hitParticleSystem.SetActive(true);
                 ball.Init(DestroyBall);
             },
             ball => { ball.gameObject.SetActive(false);
+                ball.hitParticleSystem.SetActive(false);
                 ball.gameObject.transform.position = crossHair.transform.position;
                 ball.gameObject.transform.rotation = crossHair.transform.rotation;
                 //ball.GetComponent<Rigidbody>().AddForce(-crossHair.transform.forward * force, ForceMode.Impulse);
