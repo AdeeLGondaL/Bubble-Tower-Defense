@@ -708,6 +708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 0}
+  moveSpeed: 0.4
   currentRotateAngleHorizontal: 0
   currentRotateAngleVertical: 0
   maxRotateAngleHorizontal: 60

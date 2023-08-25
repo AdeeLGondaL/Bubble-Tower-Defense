@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement Variables")]
     [SerializeField] private Joystick joystick;
     private Tween tweenID;
+    public float moveSpeed;
     public float currentRotateAngleHorizontal, currentRotateAngleVertical;
 
     public float maxRotateAngleHorizontal, minRotateAngleHorizontal, maxRotateAngleVertical, minRotateAngleVertical;
@@ -22,22 +23,22 @@ public class PlayerMovement : MonoBehaviour
     {
         if (joystick.Direction.x < 0 && currentRotateAngleHorizontal > minRotateAngleHorizontal)
         {
-            currentRotateAngleHorizontal += -0.05f;
+            currentRotateAngleHorizontal += joystick.Direction.x;
             tweenID = transform.DORotate( new Vector3(0, currentRotateAngleHorizontal, currentRotateAngleVertical), 0f);
         } 
         else if (joystick.Direction.x > 0 && currentRotateAngleHorizontal < maxRotateAngleHorizontal)
         {
-            currentRotateAngleHorizontal += 0.05f;
+            currentRotateAngleHorizontal += joystick.Direction.x;
             tweenID = transform.DORotate( new Vector3(0, currentRotateAngleHorizontal, currentRotateAngleVertical), 0f);
         }
         if (joystick.Direction.y < 0 && currentRotateAngleVertical < maxRotateAngleVertical)
         {
-            currentRotateAngleVertical += 0.05f;
+            currentRotateAngleVertical += -joystick.Direction.y;
             tweenID = transform.DORotate( new Vector3(0, currentRotateAngleHorizontal, currentRotateAngleVertical), 0f);
         } 
         else if (joystick.Direction.y > 0 && currentRotateAngleVertical > minRotateAngleVertical)
         {
-            currentRotateAngleVertical -= 0.05f;
+            currentRotateAngleVertical -= joystick.Direction.y;
             tweenID = transform.DORotate( new Vector3(0, currentRotateAngleHorizontal, currentRotateAngleVertical), 0f);
         }
     }

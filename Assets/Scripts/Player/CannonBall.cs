@@ -12,6 +12,7 @@ public class CannonBall : MonoBehaviour
     public GameObject yellowEnemy;
     public GameObject blueEnemy;
     public GameObject redEnemy;
+    public GameObject hitParticleSystem;
     private bool hasCollided = false;
 
     public void Init(Action<CannonBall> killAction)
@@ -31,14 +32,14 @@ public class CannonBall : MonoBehaviour
             if (enemy.enemyColor.Equals(ballColor))
             {
                 //Destroy Enemy Group
-
-                Destroy(other.gameObject.transform.parent.gameObject);
+                enemy.GetComponentInParent<EnemyGroup>().Die();
+                // Destroy(other.gameObject.transform.parent.gameObject);
+                GameManager.Instance.IncrementScore(150);
             }
             else if (!enemy.enemyColor.Equals(ballColor))
             {
                 //Instaniate Group of Ball Color
 
-                Debug.Log("Enters FUNCTIPM");
                 var newEnemy = Instantiate(EnemyGroupToSpawn(), other.gameObject.transform.position, other.gameObject.transform.rotation);
                 newEnemy.TryGetComponent<EnemyGroup>(out EnemyGroup enemyGroup);
                 enemyGroup.Cannon = other.gameObject.GetComponent<EnemyNavigation>().Cannon;
