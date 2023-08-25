@@ -54,6 +54,7 @@ MonoBehaviour:
   - {r: 0.23137255, g: 0.59607846, b: 1, a: 1}
   - {r: 1, g: 0.75686276, b: 0, a: 1}
   crossHair: {fileID: 1619111794641791228}
+  cannonColor: {fileID: 2100000, guid: 14d0131bbde5ab340816818ea5547191, type: 2}
   force: 200
   ballRange: 100
 --- !u!1 &586774415408842654
@@ -626,6 +627,10 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.010758709
       objectReference: {fileID: 0}
+    - target: {fileID: -5471127715160268943, guid: 1765389c397f8a8498e0670e9633c768, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 14d0131bbde5ab340816818ea5547191, type: 2}
     - target: {fileID: -3887185075125053422, guid: 1765389c397f8a8498e0670e9633c768, type: 3}
       propertyPath: m_DirtyAABB
       value: 0

@@ -15,6 +15,7 @@ public class Shooter : MonoBehaviour
     [SerializeField] public ParticleSystem smokeParticle;
     [SerializeField] private List<Color> ballColors;
     [SerializeField] private GameObject crossHair;
+    [SerializeField] private Material cannonColor;
     public float force, ballRange;
     private ObjectPool<CannonBall> pool;
     private bool canShoot = false;
@@ -67,6 +68,7 @@ public class Shooter : MonoBehaviour
             playerAnimator.SetTrigger(gettingReadyTrigger);
             Random rnd = new Random();
             ballColor = ballColors[rnd.Next(ballColors.Count)];
+            cannonColor.color = ballColor;
             smokeParticle.startColor = ballColor;
             GameUIManager.Instance.SetColor(ballColor);
             canShoot = true;
