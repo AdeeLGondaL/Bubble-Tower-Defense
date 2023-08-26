@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    private List<EnemyGroup> enemyGroups = new List<EnemyGroup>();
     public int score;
     
     // Start is called before the first frame update
@@ -27,6 +28,21 @@ public class GameManager : MonoBehaviour
     public void GameLost()
     {
         GameUIManager.Instance.GameLost();
+    }
+
+    public void RegisterEnemyGroup(EnemyGroup enemyGroup)
+    {
+        enemyGroups.Add(enemyGroup);
+    }
+
+    public void EnemyGroupDefeated(EnemyGroup enemyGroup)
+    {
+        enemyGroups.Remove(enemyGroup);
+
+        if (enemyGroups.Count == 0)
+        {
+            GameWon();
+        }
     }
 
     public void RetryLevel()

@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class EnemyGroup : MonoBehaviour
 {
-    public static int enemyGroupCount = 0;
     public Transform Cannon;
     [SerializeField] private ParticleSystem blood;
     [SerializeField] private List<GameObject> soldiers;
@@ -14,7 +13,10 @@ public class EnemyGroup : MonoBehaviour
 
     public void Start()
     {
-        enemyGroupCount = enemyGroupCount + 1;
+        if (gameManager != null)
+        {
+            gameManager.RegisterEnemyGroup(this);
+        }
     }
 
     public void Die()
@@ -24,12 +26,7 @@ public class EnemyGroup : MonoBehaviour
             soldier.SetActive(false);
         }
         blood.Play();
-        enemyGroupCount--;
-
-        if (enemyGroupCount == 0)
-        {
-            gameManager.GameWon();
-        }
+        gameManager.EnemyGroupDefeated(this);
         Destroy(this);
     }
 }
