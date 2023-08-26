@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour
         GameUIManager.Instance.SetScore(this.score.ToString());
     }
 
+    private void EnemyGroup_OnAllEnemiesKilled(object sender, System.EventArgs e)
+    {
+        GameWon();
+    }
+
     public void GameWon()
     {
         GameUIManager.Instance.GameWon();
