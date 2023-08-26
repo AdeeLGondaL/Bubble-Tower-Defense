@@ -33,22 +33,20 @@ public class Shooter : MonoBehaviour
                 ball.gameObject.transform.position = crossHair.transform.position;
                 ball.gameObject.transform.rotation = crossHair.transform.rotation;
                 ball.gameObject.SetActive(true);
-                // ball.GetComponent<Rigidbody>().AddForce(crossHair.transform.forward * force, ForceMode.Impulse);
                 if (Physics.Raycast(crossHair.transform.position, crossHair.transform.forward, out hit, ballRange))
                 {
-                    //Debug.Log($"{hit.transform.name},{hit.point}");
-                    Debug.DrawRay(crossHair.transform.position, crossHair.transform.forward * ballRange, Color.green, 3f);
-                    ball.transform.DOMove(hit.point, 1f);
+                    ball.TweenID = ball.transform.DOMove(hit.point, 0.65f);
                 }
                 ball.GetComponent<CannonBall>().ballColor = ballColor;
                 ball.hitParticleSystem.SetActive(true);
                 ball.Init(DestroyBall);
             },
-            ball => { ball.gameObject.SetActive(false);
+            ball => { 
+                ball.TweenID?.Kill();
+                ball.gameObject.SetActive(false);
                 ball.hitParticleSystem.SetActive(false);
                 ball.gameObject.transform.position = crossHair.transform.position;
                 ball.gameObject.transform.rotation = crossHair.transform.rotation;
-                //ball.GetComponent<Rigidbody>().AddForce(-crossHair.transform.forward * force, ForceMode.Impulse);
             },
             ball => { Destroy(ball.gameObject); },
             false,
