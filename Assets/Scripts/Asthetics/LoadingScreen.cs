@@ -25,9 +25,11 @@ public class LoadingScreen : MonoBehaviour
                 loadingScreen.color = color;
             }).SetDelay(2f).OnComplete(() =>
         {
-            Time.timeScale = 1f;
-            GameUIManager.Instance.StartGame();
-            gameObject.SetActive(false);
+            DOVirtual.Float(0f, 1f, 0f, value => Time.timeScale = value).OnComplete(() =>
+            {
+                gameObject.SetActive(false);
+            }).SetUpdate(true);
+            
         }).SetUpdate(true);
     }
 }

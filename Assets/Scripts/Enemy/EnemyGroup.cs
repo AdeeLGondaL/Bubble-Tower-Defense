@@ -7,6 +7,7 @@ using UnityEngine;
 public class EnemyGroup : MonoBehaviour
 {
     public static int enemyGroupCount = 0;
+    public static bool initialized;
     public Transform Cannon;
     [SerializeField] private ParticleSystem blood;
     [SerializeField] private List<GameObject> soldiers;
@@ -14,11 +15,12 @@ public class EnemyGroup : MonoBehaviour
 
     public void Start()
     {
-        enemyGroupCount = enemyGroupCount + 1;
+        enemyGroupCount += 1;
     }
 
     public void Die()
     {
+        blood.gameObject.transform.position = soldiers[0].transform.position;
         foreach (var soldier in soldiers)
         {
             soldier.SetActive(false);
