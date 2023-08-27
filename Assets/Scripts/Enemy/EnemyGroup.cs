@@ -22,11 +22,11 @@ public class EnemyGroup : MonoBehaviour
     public void Die()
     {
         blood.gameObject.transform.position = soldiers[0].transform.position;
+        blood.Play();
         foreach (var soldier in soldiers)
         {
-            soldier.SetActive(false);
+           soldier.SetActive(false);
         }
-        blood.Play();
         gameManager.EnemyGroupDefeated(this);
         Destroy(this);
     }
