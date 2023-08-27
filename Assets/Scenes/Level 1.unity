@@ -4887,6 +4887,10 @@ PrefabInstance:
       propertyPath: Cannon
       value: 
       objectReference: {fileID: 1285726898}
+    - target: {fileID: 1441239145501072600, guid: 110918207effed848815d4c79feb1b45, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1684346649}
     - target: {fileID: 1916413064601508742, guid: 110918207effed848815d4c79feb1b45, type: 3}
       propertyPath: Cannon
       value: 
@@ -9367,6 +9371,10 @@ PrefabInstance:
       propertyPath: Cannon
       value: 
       objectReference: {fileID: 1285726898}
+    - target: {fileID: 1441239145501072600, guid: 110918207effed848815d4c79feb1b45, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1684346649}
     - target: {fileID: 1916413064601508742, guid: 110918207effed848815d4c79feb1b45, type: 3}
       propertyPath: Cannon
       value: 
@@ -10047,7 +10055,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.6666667
+  m_VoxelSize: 1.3333334
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 87765d783a4a48c42a117b9850ca26d6, type: 2}
   m_BuildHeightMesh: 0
@@ -10078,7 +10086,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.6666667
+  m_VoxelSize: 1.3333334
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: a3e825d5d8d540f4cb99c8406b24b9a8, type: 2}
   m_BuildHeightMesh: 0
@@ -10524,6 +10532,10 @@ PrefabInstance:
       propertyPath: Cannon
       value: 
       objectReference: {fileID: 1285726898}
+    - target: {fileID: 1441239145501072600, guid: 110918207effed848815d4c79feb1b45, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1684346649}
     - target: {fileID: 1916413064601508742, guid: 110918207effed848815d4c79feb1b45, type: 3}
       propertyPath: Cannon
       value: 
@@ -11266,6 +11278,10 @@ PrefabInstance:
       propertyPath: Cannon
       value: 
       objectReference: {fileID: 1285726898}
+    - target: {fileID: 5169624021180465356, guid: c62349ec9a840d2449b4185bb69a1475, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1684346649}
     - target: {fileID: 5469954973200355309, guid: c62349ec9a840d2449b4185bb69a1475, type: 3}
       propertyPath: m_LocalPosition.x
       value: -80.1
@@ -11862,6 +11878,10 @@ PrefabInstance:
       propertyPath: Cannon
       value: 
       objectReference: {fileID: 1285726898}
+    - target: {fileID: 5169624021180465356, guid: c62349ec9a840d2449b4185bb69a1475, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1684346649}
     - target: {fileID: 5469954973200355309, guid: c62349ec9a840d2449b4185bb69a1475, type: 3}
       propertyPath: m_LocalPosition.x
       value: -91.3
@@ -12132,6 +12152,10 @@ PrefabInstance:
       propertyPath: Cannon
       value: 
       objectReference: {fileID: 1285726898}
+    - target: {fileID: 5169624021180465356, guid: c62349ec9a840d2449b4185bb69a1475, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1684346649}
     - target: {fileID: 5469954973200355309, guid: c62349ec9a840d2449b4185bb69a1475, type: 3}
       propertyPath: m_LocalPosition.x
       value: -77.5

@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     public void EnemyGroupDefeated(EnemyGroup enemyGroup)
     {
         enemyGroups.Remove(enemyGroup);
-
+        Debug.Log(enemyGroups.Count);
         if (enemyGroups.Count == 0)
         {
             GameWon();

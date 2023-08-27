@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.26793748, g: 0.4639402, b: 0.61437225, a: 1}
+  m_IndirectSpecularColor: {r: 0.26835054, g: 0.46414623, b: 0.6142409, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -602,8 +602,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1285726898}
     - target: {fileID: 1441239145501072600, guid: 110918207effed848815d4c79feb1b45, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1684346649}
+    - target: {fileID: 1441239145501072600, guid: 110918207effed848815d4c79feb1b45, type: 3}
       propertyPath: soldiers.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441239145501072600, guid: 110918207effed848815d4c79feb1b45, type: 3}
+      propertyPath: soldiers.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1916413064601508742, guid: 110918207effed848815d4c79feb1b45, type: 3}
       propertyPath: Cannon
@@ -5029,6 +5037,10 @@ PrefabInstance:
       propertyPath: Cannon
       value: 
       objectReference: {fileID: 1285726898}
+    - target: {fileID: 1441239145501072600, guid: 110918207effed848815d4c79feb1b45, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1684346649}
     - target: {fileID: 1916413064601508742, guid: 110918207effed848815d4c79feb1b45, type: 3}
       propertyPath: Cannon
       value: 
@@ -9509,6 +9521,10 @@ PrefabInstance:
       propertyPath: Cannon
       value: 
       objectReference: {fileID: 1285726898}
+    - target: {fileID: 1441239145501072600, guid: 110918207effed848815d4c79feb1b45, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1684346649}
     - target: {fileID: 1916413064601508742, guid: 110918207effed848815d4c79feb1b45, type: 3}
       propertyPath: Cannon
       value: 
@@ -10666,6 +10682,10 @@ PrefabInstance:
       propertyPath: Cannon
       value: 
       objectReference: {fileID: 1285726898}
+    - target: {fileID: 1441239145501072600, guid: 110918207effed848815d4c79feb1b45, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1684346649}
     - target: {fileID: 1916413064601508742, guid: 110918207effed848815d4c79feb1b45, type: 3}
       propertyPath: Cannon
       value: 
@@ -11408,6 +11428,10 @@ PrefabInstance:
       propertyPath: Cannon
       value: 
       objectReference: {fileID: 1285726898}
+    - target: {fileID: 5169624021180465356, guid: c62349ec9a840d2449b4185bb69a1475, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1684346649}
     - target: {fileID: 5469954973200355309, guid: c62349ec9a840d2449b4185bb69a1475, type: 3}
       propertyPath: m_LocalPosition.x
       value: -80.1
@@ -12004,6 +12028,10 @@ PrefabInstance:
       propertyPath: Cannon
       value: 
       objectReference: {fileID: 1285726898}
+    - target: {fileID: 5169624021180465356, guid: c62349ec9a840d2449b4185bb69a1475, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1684346649}
     - target: {fileID: 5469954973200355309, guid: c62349ec9a840d2449b4185bb69a1475, type: 3}
       propertyPath: m_LocalPosition.x
       value: -91.3
@@ -12274,6 +12302,10 @@ PrefabInstance:
       propertyPath: Cannon
       value: 
       objectReference: {fileID: 1285726898}
+    - target: {fileID: 5169624021180465356, guid: c62349ec9a840d2449b4185bb69a1475, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1684346649}
     - target: {fileID: 5469954973200355309, guid: c62349ec9a840d2449b4185bb69a1475, type: 3}
       propertyPath: m_LocalPosition.x
       value: -77.5
