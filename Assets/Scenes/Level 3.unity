@@ -5463,6 +5463,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1684346649}
+    - target: {fileID: 7753650699248246250, guid: 358bfdf8838098b47823d6d0a985adb3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextLevel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11418,6 +11422,10 @@ PrefabInstance:
     - target: {fileID: 3344768998981553066, guid: 00615b627ffa1364286675e7d968c41c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181705972195810589, guid: 00615b627ffa1364286675e7d968c41c, type: 3}
+      propertyPath: levelNumber
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6181705972195810589, guid: 00615b627ffa1364286675e7d968c41c, type: 3}
       propertyPath: numberOfRemainingEnemies

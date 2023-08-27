@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     private List<EnemyGroup> enemyGroups = new List<EnemyGroup>();
     public int score;
+
+    public int levelNumber;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,11 @@ public class GameManager : MonoBehaviour
     public void RetryLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene((levelNumber + 1) % 3);
     }
 
     public void IncrementScore(int scoreIncrement)
