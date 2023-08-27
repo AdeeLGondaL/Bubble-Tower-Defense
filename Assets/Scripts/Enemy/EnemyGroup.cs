@@ -12,7 +12,10 @@ public class EnemyGroup : MonoBehaviour
 
     public void Start()
     {
-        
+        if (gameManager != null)
+        {
+            gameManager.RegisterEnemyGroup(this);
+        }
     }
 
     public void Die()
@@ -23,7 +26,7 @@ public class EnemyGroup : MonoBehaviour
             soldier.SetActive(false);
         }
         blood.Play();
-        GameManager.Instance.numberOfRemainingEnemies--;
+        gameManager.EnemyGroupDefeated(this);
         Destroy(this);
     }
 }
