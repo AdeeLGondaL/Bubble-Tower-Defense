@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,12 +8,20 @@ public class GameManager : MonoBehaviour
 {
     private List<EnemyGroup> enemyGroups = new List<EnemyGroup>();
     public int score;
-    
     // Start is called before the first frame update
     void Start()
     {
         score = 0;
         GameUIManager.Instance.SetScore(this.score.ToString());
+    }
+
+    private void Update()
+    {
+        if (numberOfRemainingEnemies <= 0)
+        {
+            GameWon();
+            numberOfRemainingEnemies = 1;
+        }
     }
 
     private void EnemyGroup_OnAllEnemiesKilled(object sender, System.EventArgs e)

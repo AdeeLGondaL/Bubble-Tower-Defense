@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ public class CannonBall : MonoBehaviour
     public GameObject redEnemy;
     public GameObject hitParticleSystem;
     private bool hasCollided = false;
+    public Tween TweenID;
 
     public void Init(Action<CannonBall> killAction)
     {
@@ -43,7 +45,7 @@ public class CannonBall : MonoBehaviour
                 var newEnemy = Instantiate(EnemyGroupToSpawn(), other.gameObject.transform.position, other.gameObject.transform.rotation);
                 newEnemy.TryGetComponent<EnemyGroup>(out EnemyGroup enemyGroup);
                 enemyGroup.Cannon = other.gameObject.GetComponent<EnemyNavigation>().Cannon;
-                
+                GameManager.Instance.numberOfRemainingEnemies++;
             }
 
         }

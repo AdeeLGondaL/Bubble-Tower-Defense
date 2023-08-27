@@ -156,13 +156,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619111794641791228}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0861746, y: -0.70183617, z: 0.0861746, w: 0.70183617}
-  m_LocalPosition: {x: 1.39, y: 5.68, z: 0.02}
+  m_LocalRotation: {x: 0.12035624, y: -0.69678867, z: 0.12035624, w: 0.69678867}
+  m_LocalPosition: {x: 1.3, y: 7.42, z: 0.02}
   m_LocalScale: {x: 1, y: 0.9771036, z: 0.76575756}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7559050786862643003}
-  m_LocalEulerAnglesHint: {x: 14, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 19.6, y: -90, z: 0}
 --- !u!20 &8202375900938938359
 Camera:
   m_ObjectHideFlags: 0
@@ -713,7 +713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 0}
-  moveSpeed: 0.4
+  moveSpeed: 1
   currentRotateAngleHorizontal: 0
   currentRotateAngleVertical: 0
   maxRotateAngleHorizontal: 60

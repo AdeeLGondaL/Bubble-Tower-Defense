@@ -19,6 +19,7 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI gameLostScore;
     [SerializeField] private TextMeshProUGUI gameWonScore;
     [SerializeField] private Image colorImage;
+    [SerializeField] private GameObject leanTouch;
 
     [Header("Main Menu UI")]
     
@@ -26,7 +27,7 @@ public class GameUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartGame();
     }
 
     public void StartGame()
@@ -36,14 +37,14 @@ public class GameUIManager : MonoBehaviour
 
     public void SetScore(string score)
     {
-        Debug.Log(score);
-        scoreText.text = score;
+        gameWonScore.text = gameLostScore.text = scoreText.text = score;
     }
 
     public void GameWon()
     {
         joystick.SetActive(false);
         crossHair.SetActive(false);
+        leanTouch.SetActive(false);
         gameWonPopup.SetActive(true);
     } 
     
@@ -51,6 +52,7 @@ public class GameUIManager : MonoBehaviour
     {
         joystick.SetActive(false);
         crossHair.SetActive(false);
+        leanTouch.SetActive(false);
         gameLostPopup.SetActive(true);
     }
 

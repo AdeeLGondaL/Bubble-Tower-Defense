@@ -55,7 +55,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cannon: {fileID: 0}
-  blood: {fileID: 0}
+  blood: {fileID: 505113388236248809}
   soldiers:
   - {fileID: 915509880840935502}
   - {fileID: 182317369072185826}
@@ -684,6 +684,11 @@ PrefabInstance:
 --- !u!4 &505113388220976613 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 420266, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
+  m_PrefabInstance: {fileID: 505113388220867663}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &505113388236248809 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19886758, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
   m_PrefabInstance: {fileID: 505113388220867663}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1028739910571609267
