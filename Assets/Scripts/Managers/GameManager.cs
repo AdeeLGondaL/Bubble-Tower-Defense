@@ -15,15 +15,6 @@ public class GameManager : MonoBehaviour
         GameUIManager.Instance.SetScore(this.score.ToString());
     }
 
-    private void Update()
-    {
-        if (numberOfRemainingEnemies <= 0)
-        {
-            GameWon();
-            numberOfRemainingEnemies = 1;
-        }
-    }
-
     private void EnemyGroup_OnAllEnemiesKilled(object sender, System.EventArgs e)
     {
         GameWon();

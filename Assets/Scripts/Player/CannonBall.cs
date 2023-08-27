@@ -45,7 +45,6 @@ public class CannonBall : MonoBehaviour
                 var newEnemy = Instantiate(EnemyGroupToSpawn(), other.gameObject.transform.position, other.gameObject.transform.rotation);
                 newEnemy.TryGetComponent<EnemyGroup>(out EnemyGroup enemyGroup);
                 enemyGroup.Cannon = other.gameObject.GetComponent<EnemyNavigation>().Cannon;
-                GameManager.Instance.numberOfRemainingEnemies++;
             }
 
         }

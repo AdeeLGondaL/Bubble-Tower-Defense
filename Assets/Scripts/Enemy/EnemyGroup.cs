@@ -9,7 +9,8 @@ public class EnemyGroup : MonoBehaviour
     public Transform Cannon;
     [SerializeField] private ParticleSystem blood;
     [SerializeField] private List<GameObject> soldiers;
-
+    [SerializeField] private GameManager gameManager;
+    
     public void Start()
     {
         if (gameManager != null)
