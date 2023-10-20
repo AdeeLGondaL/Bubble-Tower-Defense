@@ -35,7 +35,6 @@ public class Shooter : MonoBehaviour
                 ball.gameObject.SetActive(true);
                 if (Physics.Raycast(crossHair.transform.position, crossHair.transform.forward, out hit, ballRange))
                 {
-                    Debug.Log("HAHAHAHAHAH");
                     ball.TweenID = ball.transform.DOMove(hit.point, 0.65f);
                 }
                 ball.GetComponent<CannonBall>().ballColor = ballColor;
